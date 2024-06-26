@@ -31,7 +31,9 @@ JOBS = [
 ]
 @app.route("/")
 def hello_jovian():
-    return render_template('home.html', jobs = JOBS, company = "Jovian")
+    return render_template('home.html',
+                           jobs=JOBS,
+                           company="Jovian")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
