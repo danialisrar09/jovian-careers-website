@@ -3,46 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Jovian Careers</title>
-        <style>
-            h1 {
-               font-size: 40px;
-               font-family: Roboto;
-               font-weight: normal;
-               color: rgb(50, 50, 50);
-               text-align: center;
-            }
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+              integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-            h2 {
-               font-size: 32px;
-               font-family: Roboto;
-               font-weight: normal;
-               color: rgb(100, 100, 100);
-               text-align: center;
-            }
-
-            .bodytext {
-                font-family: Roboto;
-                color: rgb(80,80,80);
-            }
-
-            #container {
-                max-width: 720px;
-                margin: 0 auto;
-            }
-
-<!--            #banner {-->
-<!--                width: 100%;-->
-<!--                height: 360px;-->
-<!--                object-fit: cover;-->
-<!--            }-->
-        </style>
     </head>
     <body>
-        <div id="container">
-            <h1>Jovian Careers</h1>
-            <center><img src="http://127.0.0.1:5000/static/banner.jpg" height="400" width="730"></center>
-            <h2>About Us</h2>
-            <p class="bodytext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        <div class="container">
+            <h1 class="text-center mt-3 mb-3">{{company}} Careers</h1>
+            <img class="img-flluid" src="http://127.0.0.1:5000/static/banner.jpg" height="400" width="1100">
+            <h2  class="text-center mt-4 mb-4">About Us</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
                 magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -55,10 +25,25 @@
                 consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            <h2>Job Openings</h2>
-            <p class="bodytext">TODO - Show the job openning here!</p>
-            <div style="text-align: center">
-                <button>Contact Us</button>
+            <h2  class="text-center mt-4 mb-4">Job Openings</h2>
+            <div>
+                {% for job in jobs %}
+                    <div style="margin-bottom: 16px">
+                        <h4 style="color: rgb(120, 120, 120) margin-bottom: 4px">{{job['title']}}</h4>
+                        <div>
+                            <b>Location:</b> {{job['location']}}
+                        </div>
+                        <div>
+                            <b>Salary:</b> {{job['salary']}}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+ss          <div>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <button class="btn btn-primary" type="button">Contact Us</button>
+                </div>
+                <p class="text-center mt-3">Copywrites 2024, Jovian</p>
             </div>
         </div>
     </body>
