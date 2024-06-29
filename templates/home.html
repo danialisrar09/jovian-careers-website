@@ -28,21 +28,13 @@
             <h2  class="text-center mt-4 mb-4">Job Openings</h2>
             <div>
                 {% for job in jobs %}
-                    <div style="margin-bottom: 16px">
-                        <h4 style="color: rgb(120, 120, 120) margin-bottom: 4px">{{job['title']}}</h4>
-                        <div>
-                            <b>Location:</b> {{job['location']}}
-                        </div>
-                        <div>
-                            <b>Salary:</b> {{job['Salary']}}
-                        </div>
-                    </div>
+                    {% include 'job_items.html' %}
+
                 {% endfor %}
             </div>
-ss          <div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="button">Contact Us</button>
-                </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button class="btn btn-primary" type="button">Contact Us</button>
+            </div>
                 <p class="text-center mt-3">Copywrites 2024, Jovian</p>
             </div>
         </div>
